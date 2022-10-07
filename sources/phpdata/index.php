@@ -16,7 +16,6 @@ try {
     $isConnected .= 'error mysqli connection';
 }
 
-// echo phpinfo();
 echo "<h2>$isConnected</h2>";
 
 $result = $db_pdo->query('SELECT * FROM test_table');
@@ -32,5 +31,3 @@ foreach ($result as $row) {
             <b>dec_value:</b> $decValue
          </p>";
 }
-
-echo '<hr>';
