@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from genapp.views import genapp_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('pydata/', genapp_page),
 ]
