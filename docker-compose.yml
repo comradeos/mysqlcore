@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "9990:3306"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "9991:8080"
+  
+  php:
+    build:
+      context: ./
+      dockerfile: dockerfile-php
+    restart: always
+    ports:
+      - "9992:80"
+    volumes:
+      - ./sources:/var/www/html/
+
+  python:
+    build:
+      context: ./
+      dockerfile: dockerfile-python
+    restart: always
+    ports:
+      - "9993:8000"
+    volumes:
+      - ./sources:/sources
+    
