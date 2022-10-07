@@ -7,6 +7,18 @@
     <title>pydata</title>
 </head>
 <body>
-    <h1>hi</h1>
+
+    <h2>{{ string }}</h2>
+
+    {% for item in testdata_list %}
+        <p>
+            <b>id:</b> {{ item.id }},
+            <b>int_value:</b> {{ item.int_value }},
+            <b>char_value:</b> {{ item.char_value }}
+        </p>
+    {% endfor %}
+
+    <hr>
+
 </body>
 </html>

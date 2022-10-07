@@ -1,20 +1,23 @@
 <?php
 
+$isConnected = '';
+
 try {
     $db_pdo = new PDO('mysql:host=db;dbname=test_db', 'root', 'root');
-    echo "<h2>pdo connected</h2>";
+    $isConnected .= 'pdo connected, ';
 } catch (\Throwable $th) {
-    echo "fucking fuck: $th";
+    $isConnected .= 'error pdo connection, ';
 }
 
 try {
     $mysqli = new mysqli('db', 'root', 'root', 'test_db');
-    echo "<h2>mysqli connected</h2>";
+    $isConnected .= 'mysqli connected';
 } catch (\Throwable $th) {
-    echo "error: $th";
+    $isConnected .= 'error mysqli connection';
 }
 
 // echo phpinfo();
+echo "<h2>$isConnected</h2>";
 
 $result = $db_pdo->query('SELECT * FROM test_table');
 
@@ -22,7 +25,12 @@ foreach ($result as $row) {
     $id = $row['id'];
     $strValue = $row['str_value'];
     $decValue = $row['dec_value'];
-    echo "$id | $strValue | $decValue<br>";
+
+    echo "<p>
+            <b>id:</b> $id, 
+            <b>str_value:</b> $strValue, 
+            <b>dec_value:</b> $decValue
+         </p>";
 }
 
 echo '<hr>';
