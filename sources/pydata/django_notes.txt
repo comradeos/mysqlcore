@@ -1,0 +1,24 @@
+установить фреймворк
+pip install django 
+
+создать проект
+django-admin startproject <project_name>
+
+запустить сервер
+python manage.py runserver
+
+создать приложение
+python manage.py startapp <app_name>
+
+
+выполнить миграции
+python manage.py migrate
+
+создать супер пользователя
+python manage.py createsuperuser
+
+создать миграции
+python manage.py makemigrations
+
+запустить оболочку
+python manage.py shell
