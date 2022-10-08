@@ -17,6 +17,8 @@ services:
     restart: always
     ports:
       - "9991:8080"
+    depends_on:
+      - db
   
   php:
     build:
@@ -27,6 +29,8 @@ services:
       - "9992:80"
     volumes:
       - ./sources:/var/www/html/
+    depends_on:
+      - db
 
   python:
     build:
@@ -37,4 +41,6 @@ services:
       - "9993:8000"
     volumes:
       - ./sources:/sources
+    depends_on:
+      - db
     
