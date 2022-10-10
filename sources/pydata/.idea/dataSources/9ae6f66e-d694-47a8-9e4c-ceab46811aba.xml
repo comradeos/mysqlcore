@@ -1553,7 +1553,7 @@ model</ColNames>
       <UnderlyingIndexName>django_content_type_app_label_model_76bd3d3b_uniq</UnderlyingIndexName>
     </key>
     <column id="394" parent="306" name="id">
-      <AutoIncrement>21</AutoIncrement>
+      <AutoIncrement>22</AutoIncrement>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
