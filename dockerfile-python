@@ -5,4 +5,5 @@ COPY requires.txt .
 RUN pip install --upgrade pip
 RUN pip install -r requires.txt
 ENTRYPOINT [ "python" ]
+RUN sleep 25
 CMD ["pydata/manage.py", "runserver", "0.0.0.0:8000"]
